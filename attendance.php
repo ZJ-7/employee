@@ -15,7 +15,7 @@ $res = mysqli_fetch_array($query);
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Login Page</title>
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@ $res = mysqli_fetch_array($query);
 
 <div class="container">
 	<div class="col-lg-12"><br>
-		<div class="row"> 
+		<div class="row">
 		<h3 class="col-lg-6">Attendance of <?php echo $res['name']; ?></h3>
 		<a href="viewhr.php?id=<?php echo $id; ?>" class="col-lg-3"><button class="btn btn-success col-lg-4" name="logout">back</button></a>
 		<a href="logout.php" class="col-lg-3"><button class="btn btn-success col-lg-4" name="logout">logout</button></a>
@@ -35,19 +35,19 @@ $res = mysqli_fetch_array($query);
         </div>
 		<table class="table table-stripped table-hover table-bordered">
 			<tr class="text-dark">
-				
-				
+
+
 				<th><h5>day</h5></th>
 				<th><h5>date</h5></th>
 				<th><h5>time in</h5></th>
 				<th><h5>time out</h5></th>
-				
+
 			</tr>
 
-			
+
 			<?php
 include 'conn.php';
-	
+
 
 $q="select * from time where id=$id";
 
@@ -57,7 +57,7 @@ while ($res = mysqli_fetch_array($query)) {
 ?>
 
 			<tr>
-				
+
 				<th><?php echo $res['day'] ?></th>
 				<th><?php echo $res['date'] ?></th>
 				<th><?php echo $res['time_in'] ?></th>
